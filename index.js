@@ -9,6 +9,7 @@ const app = express();
 const request = require('request');
 const rp = require('request-promise');
 const Base64 = require('js-base64').Base64;
+const PORT = process.env.PORT || 5000
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -23,7 +24,4 @@ app.get('/', (req,res)=>{
    res.send({"test":"home"});
 })
 
-
-app.listen(3000, ()=>{
-	console.log('Server started on port 3000...')
-})
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
