@@ -19,6 +19,10 @@ const multipartMiddleware = multipart();
 app.get('/test', (req,res)=>{
    res.send({"test":"yes"});
 })
+app.get('/', (req,res)=>{
+   res.send({"test":"home"});
+})
+
 
 app.listen(3000, ()=>{
 	console.log('Server started on port 3000...')
